@@ -1,61 +1,21 @@
 <div class="well">
 	<h2>The universe is the totally of everything that existed, has existed, or ever will exists
 		<small>this Q&A site is dedicated to questions about the story of the universe</small></h2>
-	</div>
+</div>
 
+<div class="container">
+	<% @questions.each do |q| %>
 	<div class="media">
 		<div class="media-left">
 			<a href="#">
-				<img class="media-object" src="..." alt="...">
+				<img class="media-object" src="<%= q.gravatar %>" alt="<%= q.email %>">
 			</a>
 		</div>
 		<div class="media-body">
-			<h4 class="media-heading">Media heading</h4>
-			...
+			<h4 class="media-heading"><%= q.email %> asked:
+			<br><small><%= time_ago_in_words q.created_at %> ago</small></h4>
+			<%= q.body %>
 		</div>
 	</div>
-
-	<div class="media">
-		<div class="media-left">
-			<a href="#">
-				<img class="media-object" src="..." alt="...">
-			</a>
-		</div>
-		<div class="media-body">
-			<h4 class="media-heading">Media heading</h4>
-			...
-		</div>
-	</div>
-	<div class="media">
-		<div class="media-left">
-			<a href="#">
-				<img class="media-object" src="..." alt="...">
-			</a>
-		</div>
-		<div class="media-body">
-			<h4 class="media-heading">Media heading</h4>
-			...
-		</div>
-	</div>
-	<div class="media">
-		<div class="media-left">
-			<a href="#">
-				<img class="media-object" src="..." alt="...">
-			</a>
-		</div>
-		<div class="media-body">
-			<h4 class="media-heading">Media heading</h4>
-			...
-		</div>
-	</div>
-	<div class="media">
-		<div class="media-left">
-			<a href="#">
-				<img class="media-object" src="..." alt="...">
-			</a>
-		</div>
-		<div class="media-body">
-			<h4 class="media-heading">Media heading</h4>
-			...
-		</div>
-	</div>
+	<% end %>
+</div>
